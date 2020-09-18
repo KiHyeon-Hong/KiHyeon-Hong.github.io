@@ -3,11 +3,11 @@ version: 4.0.0
 # Icarus theme variant, can be "default" or "cyberpunk"
 variant: default
 # Path or URL to the website's logo
-logo: /img/logo.svg
+logo: /img/logo.png
 # Page metadata configurations
 head:
     # URL or path to the website's icon
-    favicon: /img/favicon.svg
+    favicon: /img/favicon.png?
     # Open Graph metadata
     # https://hexo.io/docs/helpers.html#open-graph
     open_graph:
@@ -191,15 +191,15 @@ widgets:
         position: left
         type: profile
         # Author name
-        author: Your name
+        author: KiHyeon-Hong
         # Author title
-        author_title: Your title
+        author_title: 초보 개발자
         # Author's current location
-        location: Your location
+        location: South Korea
         # URL or path to the avatar image
-        avatar: 
+        avatar: /img/avatar.png
         # Whether show the rounded avatar image
-        avatar_rounded: false
+        avatar_rounded: true
         # Email address for the Gravatar
         gravatar: 
         # URL or path for the follow button
@@ -208,16 +208,16 @@ widgets:
         social_links:
             Github:
                 icon: fab fa-github
-                url: 'https://github.com/ppoffice'
+                url: 'https://github.com/KiHyeon-Hong'
             Facebook:
                 icon: fab fa-facebook
-                url: 'https://facebook.com'
+                url: 'https://github.com/KiHyeon-Hong'
             Twitter:
                 icon: fab fa-twitter
-                url: 'https://twitter.com'
+                url: 'https://github.com/KiHyeon-Hong'
             Dribbble:
                 icon: fab fa-dribbble
-                url: 'https://dribbble.com'
+                url: 'https://github.com/KiHyeon-Hong'
             RSS:
                 icon: fas fa-rss
                 url: /
