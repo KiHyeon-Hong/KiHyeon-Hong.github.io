@@ -199,7 +199,7 @@ widgets:
         # URL or path to the avatar image
         avatar: /img/avatar.png
         # Whether show the rounded avatar image
-        avatar_rounded: true
+        avatar_rounded: false
         # Email address for the Gravatar
         gravatar: 
         # URL or path for the follow button
@@ -233,8 +233,9 @@ widgets:
         type: links
         # Names and URLs of the sites
         links:
-            Hexo: 'https://hexo.io'
-            Bulma: 'https://bulma.io'
+            # Hexo: 'https://hexo.io'
+            Git: 'https://github.com/KiHyeon-Hong'
+            # Bulma: 'https://bulma.io'
     # Categories widget configurations
     -
         # Where should the widget be placed, left sidebar or right sidebar
