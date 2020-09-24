@@ -9,4 +9,4 @@ thumbnail: /images/2020/09/18/myLogo.png
 ---
 ![myLogo](/images/2020/09/18/myLogo.png)
 
-Git Blog 첫 포스팅입니다.
+This is my first post.
