@@ -13,18 +13,18 @@ thumbnail: /images/AWS/AWSGuide/lightsail_시작하기/index.svg
 
  lightsail은 플랫폼과 시작 이미지를 선택하는 것만으로 인스턴스를 바로 시작할 수 있다.
 
- ====================
+---------------------------------------
 
  - 웹 사이트 블로그
  - 단순 앱
  - 개발 및 테스트 환경
  - 소수의 서버로 구성된 비즈니스 소프트웨어
 
-====================
+---------------------------------------
 
 wordpress blig를 구축한다.
 
-====================
+---------------------------------------
 
 구축 과정
 1. AWS Lightsail 접속
@@ -36,7 +36,7 @@ wordpress blig를 구축한다.
     B. Bitnami(SSH) 접속을 통한 아이디 패스워드 생성/확인
     C. wordpress 관리자 페이지 접속/확인
 
-====================
+---------------------------------------
 
 - AWS console에서 lightsail 접속
 
@@ -60,7 +60,7 @@ wordpress blig를 구축한다.
 - 인스턴스 플랜은 프리티어 가입 후 첫 달 무료 서비스를 이용하기 위해 가장 저렴한 플랜을 선택한다.
 - 인스턴스 확인에서 고유한 이름을 선택해야하며, 인스턴스 수를 늘릴경우 추가 요금이 발생할 수 있다.
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart4.jpg)
 
@@ -98,7 +98,7 @@ $ cat bitnami_credentials
 
 - Setting의 General에서 Site Language를 한국어로 바꾸고 저장한다.
 
-====================
+---------------------------------------
 
 - wordpress와 polly
 1. wordpress 플러그인 설정
@@ -111,7 +111,7 @@ $ cat bitnami_credentials
     F. 사용자 키 보관
 3. wordpress 플러그인 설정 및 사용
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart11.jpg)
 
@@ -124,7 +124,7 @@ $ cat bitnami_credentials
 - 클릭하면 AWS access key와 AWS secret key를 입력하라는 메시지가 출력된다.
 - 이를 이용하기 위해서는 IAM이 필요하다.
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart13.jpg)
 
@@ -177,7 +177,7 @@ $ cat bitnami_credentials
 - 정책 검토를 하면 다음과 같은 화면이 나온다.
 - 정책 명을 policy_for_wordpress_polly으로 입력한 후 정책 생성을 클릭한다.
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart16.jpg)
 
@@ -198,7 +198,7 @@ $ cat bitnami_credentials
 - 프로그래밍 액세스 방식은 액세스 키와 비밀 액세스 키가 발급된다.
 - 키는 .csv 파일로 보관할 수 있다.
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart20.jpg)
 
@@ -209,7 +209,7 @@ $ cat bitnami_credentials
 
 - Text to Speech에서 source language를 한국어로 선택하며, Enable text-to-speech support를 체크한다.
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart22.jpg)
 
@@ -228,10 +228,10 @@ $ cat bitnami_credentials
 
 - 다운로드도 가능하다.
 
-====================
+---------------------------------------
 
 ![](/images/AWS/AWSGuide/lightsail_시작하기/lightsailStart26.jpg)
 
 - 첫 한달 간은 무료로 사용이 가능하지만, 그 이후로는 매달 $3.5의 금액이 나가므로, 실습 후 인스턴스를 삭제한다.
 
-====================
+---------------------------------------
