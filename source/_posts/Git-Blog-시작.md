@@ -9,4 +9,4 @@ thumbnail: /images/2020/09/18/myLogo.png
 ---
 ![myLogo](/images/2020/09/18/myLogo.png)
 
-This is my first post.
+블로그 임시 로고 입니다.
