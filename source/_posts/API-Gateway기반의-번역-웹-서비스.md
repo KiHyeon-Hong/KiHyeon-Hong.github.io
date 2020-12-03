@@ -12,7 +12,6 @@ thumbnail: /images/AWS/AWSGuide/API게이트웨이_응용하기/index.svg
 ![API Gateway](/images/AWS/AWSGuide/API게이트웨이_응용하기/index.svg)
 
 - 실습 요약
-
 1. 번역 API 게이트웨이용 람다 함수 생성
     A. 람다 함수 생성(람다 함수 이름 : lambda_for_translate_Service)
     B. 람다 함수 실행 역할 생성(람다 역할 이름 : role_for_translate_Service)
