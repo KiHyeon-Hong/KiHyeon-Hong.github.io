@@ -5,3 +5,11 @@ db.json
 node_modules/
 public/
 .deploy*/
+
+public/tags/*
+public/categories/*
+public/2020/*
+public/archives/*
+public/content.json
+public/about/index.html
+public/project/index.html
