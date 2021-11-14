@@ -375,7 +375,7 @@
 <ul>
 <li>DB에 접속해보면 입력한 데이터가 정상적으로 저장되어 있는 것을 확인할 수 있다.</li>
 </ul>
-</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-11-10T05:53:16.000Z" title="2020-11-10T05:53:16.000Z">2020-11-10</time>게시 됨</span><span class="level-item"><time dateTime="2021-11-14T06:33:04.486Z" title="2021-11-14T06:33:04.486Z">2021-11-14</time>업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/AWS/">AWS</a></span><span class="level-item">5분안에 읽기 (약 815 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/11/10/API-Gateway%EA%B8%B0%EB%B0%98%EC%9D%98-%EB%B2%88%EC%97%AD-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4/">API Gateway기반의 번역 웹 서비스</a></h1><div class="content"><p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/index.svg"></p>
+</div></article></div><div class="card"><article class="card-content article" role="article"><div class="article-meta size-small is-uppercase level is-mobile"><div class="level-left"><span class="level-item"><time dateTime="2020-11-10T05:53:16.000Z" title="2020-11-10T05:53:16.000Z">2020-11-10</time>게시 됨</span><span class="level-item"><time dateTime="2021-11-14T07:22:09.376Z" title="2021-11-14T07:22:09.376Z">2021-11-14</time>업데이트 됨</span><span class="level-item"><a class="link-muted" href="/categories/AWS/">AWS</a></span><span class="level-item">5분안에 읽기 (약 815 단어)</span></div></div><h1 class="title is-3 is-size-4-mobile"><a class="link-muted" href="/2020/11/10/API-Gateway%EA%B8%B0%EB%B0%98%EC%9D%98-%EB%B2%88%EC%97%AD-%EC%9B%B9-%EC%84%9C%EB%B9%84%EC%8A%A4/">API Gateway기반의 번역 웹 서비스</a></h1><div class="content"><p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/index.svg"></p>
 
 <ul>
 <li>실습 요약</li>
@@ -399,41 +399,41 @@
 <li>role_for_translate_Service 입력</li>
 <li>정책 템플릿은 ‘기본 Lambda@Edge’ 입력</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail1"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail1.jpg"></p>
 
 <ul>
 <li>람다 함수 코드는 다음과 같이 작성</li>
 </ul>
 <figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment">/* AWS SDK 를 가져옵니다.*/</span></span><br><span class="line"><span class="keyword">var</span> AWS = <span class="built_in">require</span>(<span class="string">&#x27;aws-sdk&#x27;</span>);</span><br><span class="line"></span><br><span class="line">AWS.config.update(&#123; <span class="attr">region</span>: <span class="string">&#x27;us-east-1&#x27;</span> &#125;);</span><br><span class="line"></span><br><span class="line"><span class="keyword">var</span> translate = <span class="keyword">new</span> AWS.Translate();</span><br><span class="line"><span class="built_in">exports</span>.handler = <span class="function"><span class="keyword">function</span> (<span class="params">event, context, callback</span>) </span>&#123;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="built_in">JSON</span>.stringify(event.body));</span><br><span class="line"></span><br><span class="line">    <span class="keyword">const</span> response = <span class="built_in">JSON</span>.parse(event.body);</span><br><span class="line"></span><br><span class="line">    <span class="comment">//event.body로 POST로 받은 데이터를 받습니다.</span></span><br><span class="line">    <span class="keyword">try</span> &#123;</span><br><span class="line">        <span class="keyword">const</span> translateParams = &#123;</span><br><span class="line">            SourceLanguageCode: <span class="string">&#x27;ko&#x27;</span>,</span><br><span class="line">            TargetLanguageCode: <span class="string">&#x27;en&#x27;</span>,</span><br><span class="line">            Text: response.text,</span><br><span class="line">        &#125;;</span><br><span class="line"></span><br><span class="line">        <span class="comment">//translate SDK를 불러옵니다.</span></span><br><span class="line">        translate.translateText(translateParams, <span class="function"><span class="keyword">function</span> (<span class="params">err, data</span>) </span>&#123;</span><br><span class="line">            <span class="keyword">if</span> (err) callback(err);</span><br><span class="line">            callback(<span class="literal">null</span>, &#123;</span><br><span class="line">                statusCode: <span class="number">200</span>,</span><br><span class="line">                headers: &#123;</span><br><span class="line">                    <span class="string">&#x27;Access-Control-Allow-Origin&#x27;</span>: <span class="string">&#x27;*&#x27;</span>, <span class="comment">//S3에서 요청을 할 수 있도록 허용해줍니다.</span></span><br><span class="line">                    <span class="string">&#x27;Access-Control-Allow-Credentials&#x27;</span>: <span class="literal">true</span>,</span><br><span class="line">                &#125;,</span><br><span class="line">                body: data.TranslatedText,</span><br><span class="line">            &#125;);</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125; <span class="keyword">catch</span> (e) &#123;</span><br><span class="line">        callback(<span class="literal">null</span>, &#123;</span><br><span class="line">            statusCode: <span class="number">200</span>,</span><br><span class="line">            body: <span class="built_in">JSON</span>.stringify(e),</span><br><span class="line">        &#125;);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;;</span><br></pre></td></tr></table></figure>
 
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail2"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail2.jpg"></p>
 
 <ul>
 <li>람다 함수 역할을 수정</li>
 <li>권한의 실행 역할에서 role_for_translate_Service 선택</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail3"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail3.jpg"></p>
 
 <ul>
 <li>기존에 있는 권한인 TranslateFullAccess를 선택</li>
 <li>새롭게 translate로의 접근 권한이 생김</li>
 </ul>
 <hr>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail4"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail4.jpg"></p>
 
 <ul>
 <li>추가 트리거를 통하여 API 게이트웨이를 연간함</li>
 <li>API 생성을 선택</li>
 <li>보안은 열기로 설정</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail5"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail5.jpg"></p>
 
 <ul>
 <li>API 엔드포인트를 보면 주소가 생김</li>
 <li>해당 주소가 홈페이지를 통해 서비스르 만들어 요청할 주소</li>
 </ul>
 <hr>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail6"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail6.jpg"></p>
 
 <ul>
 <li>웹 페이지를 다음과 같이 생성</li>
@@ -443,45 +443,45 @@
 <ul>
 <li>이때, fetch 안에 아까 람다 함수의 API 게이트웨이 엔드포인트를 복사한다.</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail7"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail7.jpg"></p>
 
 <ul>
 <li>S3 버킷을 생성</li>
 <li>버킷 이름은 전세계에서 유일한 이름으로 설정해야 함</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail8"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail8.jpg"></p>
 
 <ul>
 <li>이때, 퍼블릭 액세스 차단을 위한 버킷 설정에서 모든 퍼블릭 액세스 차단을 해제하고, 경고문을 체크</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail9"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail9.jpg"></p>
 
 <ul>
 <li>해당 버킷에 방금 생성한 index.html 파일을 업로드 한다.</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail10"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail10.jpg"></p>
 
 <ul>
 <li>이때 중요한점은 해당 index.html 파일을 퍼블릭으로 설정해야 함</li>
 </ul>
 <hr>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail11"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail11.jpg"></p>
 
 <ul>
 <li>정적 웹 사이트 호스팅 편집에서 활성화를 선택</li>
 <li>인덱스 문서로 index.html, 파일은 없지만 오류 문서로 error.html을 입력</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail12"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail12.jpg"></p>
 
 <ul>
 <li>버킷 웹 사이트 엔드포인트가 뜨는데, 이것이 바로 번역 사이트의 엔드 포인트</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail13"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail13.jpg"></p>
 
 <ul>
 <li>사이트 접속 시 해당 화면이 나오는 것을 볼 수 있음</li>
 </ul>
-<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail14"></p>
+<p align="center"><img src="/images/AWS/AWSGuide/API게이트웨이_응용하기/APIGatewayDetail14.jpg"></p>
 
 <ul>
 <li>텍스트 입력 후 submit 선택 시 번역이 작동되는 것을 확인</li>
